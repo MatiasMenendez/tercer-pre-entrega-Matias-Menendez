@@ -84,14 +84,14 @@ def tecnologiasFormulario(req):
 def busquedaCamada(req):
     return render(req, "../templates/appportfolio/busquedaCamada.html")
 
-def buscar(req):
-    if req.GET['camada']:
+def buscar(request):
+    if request.GET["camada"]:
         
-        camada = req.GET['camada']
+        camada = request.GET['camada']
         
-        cursos = Cursos.objects.filter(camada__icontains=camada)
+        curso = Cursos.objects.filter(camada__icontains=camada)
         
-        return render(req, "../templates/appportfolio/resultadoBusqueda.html", {"curso": cursos, "camada": camada})
+        return render(request, "../templates/appportfolio/resultadoBusqueda.html", {"nombre": curso, "camada": camada})
     else:
         
         respuesta = "no enviaste datos"

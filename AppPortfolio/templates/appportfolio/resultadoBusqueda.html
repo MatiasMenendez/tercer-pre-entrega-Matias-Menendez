@@ -10,11 +10,11 @@
 
     <p>Estamos buscando el: {{ camada }}</p>
 
-    {% if cursos %}
+    {% if nombre %}
     <ul>
-        {% for curso in cursos%}
-        <li>{{ curso.nombre}}</li>
-        <li>{{ curso.camada}}</li>
+        {% for curso in nombre %}
+        <li>{{ curso.nombre }}</li>
+        <li>{{ curso.camada }}</li>
         {% endfor %}
     </ul>
     {% endif %}
